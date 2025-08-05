@@ -1,0 +1,97 @@
+* {
+  background-color: gray;
+}
+
+p {
+  color: blueviolet;
+  font-family: Georgia, "Times New Roman", Times, serif; /* fallback technique, last name: for the family */
+  font-style: italic;
+  font-weight: bold;
+  font-size: 28px;
+  font-variant: small-caps;
+}
+
+div > p {
+  color: blue;
+}
+
+div span {
+  color: yellow;
+}
+
+#p2 {
+  background-color: goldenrod;
+}
+
+.one {
+  color: wheat;
+  background-color: blueviolet;
+}
+
+input[type="password"] {
+  color: green;
+}
+
+.one {
+  color: chartreuse;
+}
+
+div p {
+  color: yellow;
+}
+
+h1,
+h3 {
+  color: sandybrown;
+}
+
+p {
+  color: blue;
+}
+
+#p1 {
+  direction: ltr;
+  color: red;
+  /* text-decoration: line-through red dashed;
+  letter-spacing: 50px;
+  word-spacing: 20px;
+  line-height: 70px; */
+  background-image: url("../imgs/725606.jpg");
+  background-repeat: no-repeat;
+  /* background-position: 20px 45px;
+  */
+  background-size: cover;
+  width: 75%;
+  height: 500px;
+  overflow: auto;
+}
+
+div > p > span {
+  background-color: #399292e6;
+  text-transform: capitalize;
+}
+
+li {
+  display: inline-block;
+  background-color: aquamarine;
+  border: 1px red solid;
+  margin: 10px;
+  width: 400px;
+}
+
+/* 
+	css specifications: 
+		1- hover over the css selector to know the value of Selector Specificity.
+		2- if the Selector Specificity is equaled so check last applied.
+		3- important skips any thing and apply it.
+	
+	text-align: start, end is related to text-direction
+	text-transform is used rather that font-variant
+	text-overflow: scheduled
+	background-attachment: local;
+	position: 
+		static(default) not accepts top, bottom and etc ...
+		the position absolute takes its position from the nearest div its position: relative
+
+
+		*/

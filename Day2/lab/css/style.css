@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  direction: rtl;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#header {
+  width: 100%;
+  background-color: darkblue;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#linksbar {
+  display: inline-block;
+  width: 24%;
+  direction: ltr;
+  border-left: 1px solid gray;
+  padding: 10px;
+}
+
+#customerslist {
+  display: inline-block;
+  width: 75%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+#loginform {
+  width: 100%;
+}
+
+input[type] {
+  display: block;
+  padding: 5px 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  margin: 5px 0;
+}
+
+button {
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(91, 116, 255);
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  background-color: rgb(106, 99, 250);
+  text-align: center;
+  width: fit-content;
+  padding: 10px 100px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  margin-right: 10px;
+}
+
+th,
+td {
+  padding: 12px 10px;
+}
+
+th {
+  background-color: rgb(129, 129, 207);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+tr {
+  background-color: rgb(222, 220, 220);
+  text-align: left;
+}
+
+tr:nth-child(odd) {
+  background-color: aqua;
+}
+
+#content {
+  direction: ltr;
+}
+
+#content h2 {
+	margin-bottom: 20px;
+}
+
+#aboutus {
+  display: inline-block;
+  width: 30%;
+  position: relative;
+}
+
+#titles {
+  display: inline-block;
+  position: absolute;
+  width: 70%;
+  
+  margin-left: 50px;
+}
+#titles p {
+  display: inline-block;
+  width: calc(50% / 3);
+}
