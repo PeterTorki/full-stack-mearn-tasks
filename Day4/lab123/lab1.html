@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Lab 1:
+      // JavaScript is used to make web pages interactive
+      /*
+          	JS uses:
+          		form validation
+          		animations
+          		modifying doms
+          		customize style
+          */
+      // print name:
+      console.log("Peter Joseph");
+      // print age:
+      console.log(23);
+      // print language:
+      //  console.log("JavaScript");
+
+      //  // Lab 2:
+      //  try {
+
+      //   var firstName = "Peter";
+      //   var LastName = "Joseph";
+      //   var age_in_years = 23;
+      //   var isStudent = true;
+      //   var 123name="PEter";
+      //   var my-name="PEter";
+      //   var let = 52;
+
+      //   console.log(firstName, LastName, age_in_years);
+      // } catch(error) {
+      //   console.error(error)
+      // }
+
+      // Lab 3:
+      var grade = parseInt(prompt("Enter your grade"));
+
+      if (age >= 90) {
+        console.log("Excellent");
+      } else if (age >= 75 && age <= 89) {
+        console.log("Good");
+      } else if (age >= 60 && age <= 74) {
+        console.log("Pass");
+      } else {
+        console.log("Fail");
+      }
+
+      // Lab 4:
+      var rndPrice = Math.floor(Math.random() * (100 - 10 + 1) + 10);
+      rndPrice = rndPrice.toFixed(2);
+
+      // Lab 5:
+
+      // Lab 6:
+      var date = new Date();
+      date.setDate(date.getDate() + 3);
+      // getDate: get the day of the month (1, 31)
+      // setDate: set the day of the date
+      console.log("Date after 3 days:", date);
+
+      // Lab 8:
+      for (var i = 0; i <= 50; i++) {}
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Lab 1:
+      // JavaScript is used to make web pages interactive
+      /*
+          	JS uses:
+          		form validation
+          		animations
+          		modifying doms
+          		customize style
+          */
+      // print name:
+      console.log("Peter Joseph");
+      // print age:
+      console.log(23);
+      // print language:
+      //  console.log("JavaScript");
+
+      //  // Lab 2:
+      //  try {
+
+      //   var firstName = "Peter";
+      //   var LastName = "Joseph";
+      //   var age_in_years = 23;
+      //   var isStudent = true;
+      //   var 123name="PEter";
+      //   var my-name="PEter";
+      //   var let = 52;
+
+      //   console.log(firstName, LastName, age_in_years);
+      // } catch(error) {
+      //   console.error(error)
+      // }
+
+      // Lab 3:
+      // var grade = parseInt(prompt("Enter your grade"));
+
+      // if (age >= 90) {
+      //   console.log("Excellent");
+      // } else if (age >= 75 && age <= 89) {
+      //   console.log("Good");
+      // } else if (age >= 60 && age <= 74) {
+      //   console.log("Pass");
+      // } else {
+      //   console.log("Fail");
+      // }
+
+      // // Lab 4:
+      // var rndPrice = Math.floor(Math.random() * (100 - 10 + 1) + 10);
+      // rndPrice = rndPrice.toFixed(2);
+
+      // // Lab 5:
+      // var productName = prompt("Enter Product Name");
+      // var productNameLowered = productName.toLowerCase();
+
+      // if (productNameLowered.includes("laptop")) {
+      //   console.log("This is an laptop product.");
+      // }
+
+      // // Lab 6:
+      // var currentDate = new Date();
+      // currentDate.setDate(currentDate.getDate() + 3); // getDate: get the day of the month(1-31), setDate: set the day of the month(1-31)
+      // console.log("Current date plus 3 days: " + currentDate);
+
+      // // Lab 7:
+
+      // while:
+      function loginWithWhile(correctPassword) {
+        let attempts = 3;
+        let input;
+
+        while (attempts > 0) {
+          input = prompt("Enter your password:");
+          if (input === correctPassword) {
+            console.log("Login success");
+            return;
+          } else {
+            attempts--;
+            console.log("Incorrect password. Attempts left: " + attempts);
+          }
+        }
+
+        console.log("Too many failed attempts");
+      }
+
+      // do while:
+      function loginWithDoWhile(correctPassword) {
+        let attempts = 3;
+        let input;
+
+        do {
+          input = prompt("Enter your password:");
+          if (input === correctPassword) {
+            console.log("Login successful!");
+            return;
+          } else {
+            attempts--;
+            if (attempts > 0) {
+              console.log("Incorrect password. Attempts left: " + attempts);
+            }
+          }
+        } while (input !== correctPassword && attempts > 0);
+
+        if (input !== correctPassword) {
+          console.log("Too many failed attempts");
+        }
+      }
+
+      // // Lab 8:
+      // var specificNumber = Math.random() * 100;
+      // for (var i = 1; i <= 50; i++) {
+      //   if (i === specificNumber) {
+      //     break;
+      //   }
+      //   if (i % 2 === 0) {
+      //     continue;
+      //   }
+      //   console.log(i);
+      // }
+
+      // Lab 9:
+      var number = parseInt(prompt("Enter a number"));
+      for (let i = 0; i < number; i++) {
+        var str = "";
+        for (let j = 0; j <= i; j++) {
+          str += "*";
+        }
+        console.log(str);
+      }
+
+      // Lab 10:
+      var amount = parseFloat(prompt("Enter the initial price:"));
+
+      var taxRate = 0.15;
+      var discountRate = 0.1;
+
+      amount += amount * taxRate;
+      amount -= amount * discountRate;
+
+      // Lab 11:
+      function hasLetter(password) {
+        for (var i = 0; i < password.length; i++) {
+          var char = password[i];
+          if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function hasNumber(password) {
+        for (var i = 0; i < password.length; i++) {
+          var char = password[i];
+          if (char >= "0" && char <= "9") {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function isStrongPassword(password) {
+        return (
+          password.length >= 8 && hasLetter(password) && hasNumber(password)
+        );
+      }
+
+      var password = prompt("Enter a password:");
+
+      if (isStrongPassword(password)) {
+        alert("Password is strong");
+      } else {
+        alert("Password is weak");
+      }
+
+      // Lab 12:
+      var prefix = "PROMO";
+      for (var i = 0; i < 5; i++) {
+        var randomNumber = Math.floor(Math.random() * 100000) + 1; // best practice is to build it manually to get 0 at first
+        var promoCode = prefix + randomNumber;
+        console.log(promoCode);
+      }
+
+      // Lab 13:
+      (function IIFE() {
+        var config = {
+          passkey: "12345",
+        };
+        console.log("Config passkey:", config);
+      })();
+
+      // Lab 14:
+      function calculator(a, b, operator) {
+        try {
+          switch (operator) {
+            case "+":
+              return a + b;
+            case "-":
+              return a - b;
+            case "*":
+              return a * b;
+            case "/":
+              if (b === 0) {
+                throw new Error("Cannot divide by zero.");
+              }
+              return a / b;
+            default:
+              throw new Error("Invalid operator. Use +, -, *, or /");
+          }
+
+          console.log("Result:", result);
+        } catch (error) {
+          console.error(error);
+        } finally {
+          console.log("Operation completed.");
+        }
+      }
+
+      calculator(10, 5, "+");
+      calculator(10, 0, "/");
+      calculator("x", 5, "*");
+    </script>
+  </body>
+</html>
