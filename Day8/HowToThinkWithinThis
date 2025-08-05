@@ -1,0 +1,22 @@
+Step 1: Is it an Arrow Function?
+✅ Arrow functions do not have their own this.
+They inherit this from the surrounding scope (lexical context)
+
+Step 2: Is it called as a Method on an Object?
+✅ If a regular function is called like object.method(), then:
+this = the object before the dot
+
+Step 3: Is it a Regular Function Call (not a method)?
+✅ If the function is called normally (e.g., myFunc()), then:
+
+- In strict mode: this = undefined
+- In non-strict mode (browser): this = window
+
+✅ BONUS Steps (when needed):
+🔸 Was it called using .call(), .apply(), or .bind()?
+You manually set this.
+
+🔸 Is it inside a Class?
+
+- Inside a method → this = instance
+- Inside arrow function → this = outer context (often still the instance)
