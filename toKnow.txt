@@ -1,0 +1,38 @@
+1- WebPack
+2- Minifying
+3- Lazy Loading
+4- TDZ (Temporal Dead Zone)
+5- z = 2, as it not declared with var -> it's a global varible
+6- Event Loop: https://www.youtube.com/watch?v=eiC58R16hb8
+7- micro task queue vs task queue in event loop
+8- var vs function in hoisiting
+9- Event 3 Phases
+10- Ajax
+11- GET vs POST in form
+12- Objects 4 main categories
+13- Function Chaining
+14- Object 2 ways creation(new constructor, literal creation)
+15- Prototype inheritance
+16- Associative Array
+17- Shallow copy and Deep copy
+18- Function types
+19- Caller attribute
+20- Borrowing Methods JS
+21- Closure
+22- Closure with looping
+23- Shadowing
+
+24- Factory function and Constructor function
+25- How the keyword new works with Constructor function as it binds it.
+26- Prototype modifying
+27- Var can make data private in Constructor function
+28- Overloading
+29- Null vs undefined in terms of default values in parameters and: || 
+30- Implicit binding
+
+31- Explicit binding
+32- Hard binding
+33- Property Descriptors: (Data, Accessor) Descriptor
+
+34- WAF
+35- MIME type
