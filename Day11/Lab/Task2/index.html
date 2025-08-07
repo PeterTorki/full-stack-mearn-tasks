@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <video width="320" height="240" controls autoplay>
+      <source src="../img/video/aot1.mp4" />
+    </video>
+    <section id="controls">
+      <button id="play">Play</button>
+      <button id="stop">Stop</button>
+      <button id="mute">Mute</button>
+      <button id="un-mute">Un mute</button>
+      <input type="range" name="volume" id="volume" min="0" max="1" step="0.1" />
+    </section>
+    <br />
+    <progress value="0"></progress>
+    <aside>
+      <article id="vid1" vidSrc="../img/video/aot1.mp4">
+        <img width="200px" height="100px" src="../img/800x800-1.svg" />
+        <p>Watch Now</p>
+      </article>
+      <article id="vid2" vidSrc="../img/video/ed_1024_512kb.mp4">
+        <img width="200px" height="100px" src="../img/email-blue.ico" />
+        <p>Watch Now</p>
+      </article>
+      <article id="vid3" vidSrc="../img/video/aot2.mp4">
+        <img width="200px" height="100px" src="../img/Amazed Smiley.jfif" />
+        <p>Watch Now</p>
+      </article>
+      <article id="vid4" vidSrc="../img/video/sample.mp4">
+        <img width="200px" height="100px" src="../img/fasebook.jpg" />
+        <p>Watch Now</p>
+      </article>
+    </aside>
+    <script src="script.js"></script>
+  </body>
+</html>
