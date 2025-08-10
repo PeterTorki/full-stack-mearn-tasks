@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Average&family=Noto+Sans+Symbols:wght@100..900&family=Playwrite+HU:wght@100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* *{
+
+        }
+        p{
+
+        }
+        p>div{
+
+        }
+        p div{
+
+        }
+        p,h1{
+
+        }
+        [type=text]{
+
+        }
+        [hidden]{
+
+        }
+        [val*=a]
+        [val$=aaa]
+         */
+        a:active {
+            color: green;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        h1:hover {
+            background-color: blueviolet;
+            font-family: "Average", serif;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        h1::after {
+            content: "text from css";
+        }
+
+        h1::before {
+            content: "any data";
+        }
+
+        h1::first-letter {
+            color: red;
+            font-size: 40px;
+            text-transform: capitalize;
+        }
+
+        p::first-line {
+            color: tomato;
+        }
+
+        ul li:nth-child(2n-1) {
+            color: red;
+        }
+
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        input:valid {
+            outline: 2px blue dashed;
+            border: 2px green;
+        }
+
+        p {
+            /* -webkit-border-image: url(img/border.png);
+            border-image: url("img/border.png");
+            border-image-slice: 30; */
+            /* border: 3px solid gray;
+            border-radius: ; */
+        }
+
+        #div1 {
+            width: 150px;
+            height: 150px;
+            background-color: cadetblue;
+            border: 1px red solid;
+            /* border-radius: 100px 3px; */
+            /* border-radius: 10px 20px 30px 40px; */
+            border-radius: 50%;
+            box-shadow: -10px -10px 20px red;
+        }
+
+        h1 {
+            text-shadow: 10px 10px 1px gray;
+        }
+
+        #div2 {
+            /* font-family: "Average", serif;
+            font-weight: 400;
+            font-style: normal; */
+            font-family: "Noto Sans Symbols", sans-serif;
+            font-optical-sizing: auto;
+            /* font-weight: <weight>; */
+            font-style: normal;
+
+        }
+
+        #div3 {
+            /* font-family: "Average", serif; */
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        #div4 {
+            @font-face {
+                font-family: Noto_Sans_Symbols;
+                src: url("font/Noto_Sans_Symbols/NotoSansSymbols-VariableFont_wght.ttf");
+            }
+
+            font-family: Noto_Sans_Symbols;
+        }
+
+        h1 {
+            transform: translate(30px, 30px);
+            /* transform: rotate(20deg); */
+            transition: all;
+            transition-duration: 5s;
+            transition-delay: 2s;
+            transition-timing-function: linear;
+        }
+
+        h1:hover {
+            transform: rotate(20deg);
+            /* transition: all;
+            transition-duration: 5s; */
+        }
+
+        @keyframes anmi {
+            from {
+                position: relative;
+                left: 30px;
+                background-color: cadetblue;
+                box-shadow: 10px 10px 10px gray;
+                border: 3px gold dotted;
+            }
+
+            to {
+                position: relative;
+                left: 300px;
+                background-color: coral;
+                box-shadow: 20px 20px 20px gray;
+                border: 3px green dotted;
+            }
+
+        }
+
+        #div1 {
+            animation: anmi;
+            animation-duration: 5s;
+            animation-iteration-count: 10;
+            animation-direction: alternate;
+            animation-delay: 2s;
+        }
+
+        @keyframes rot {
+            0% {
+                transform: rotate(0deg);
+                background-color: blue;
+            }
+
+            25% {
+                transform: rotate(90deg);
+                background-color: gold;
+            }
+
+            50% {
+                transform: rotate(180deg);
+                background-color: gold;
+            }
+
+            75% {
+                transform: rotate(270deg);
+                background-color: chocolate;
+            }
+
+            100% {
+                transform: rotate(360deg);
+                background-color: crimson;
+            }
+        }
+
+        h1 {
+            animation: rot 60s;
+        }
+
+        p {
+            columns: 2;
+        }
+
+        #div2 {
+            height: 300px;
+            /* background: linear-gradient(red, yellow); */
+            /* background: linear-gradient(to right, red, yellow); */
+            background: radial-gradient(red, yellow);
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>this is a h1</h1>
+    <a href="#">any link</a>
+    &copy;
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, error harum ullam dolorum ex quia in, odit
+        nisi at nam dignissimos soluta neque minus natus suscipit quod, dicta laudantium id?</p>
+    <div id="div1"></div>
+    <div id="div2">
+        Div2
+    </div>
+    <div id="div4">
+        Div4
+    </div>
+    <div id="div3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolorum iusto rem velit beatae culpa exercitationem,
+        sapiente sit quis veniam, perferendis placeat ea fuga quam architecto nemo molestias doloremque! Cum?
+    </div>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+    </ul>
+    <input type="text" required>
+</body>
+
+</html>

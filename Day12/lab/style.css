@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 20px;
+}
+div {
+  margin: 50px 0;
+}
+ul {
+  list-style-type: none;
+  font-size: 0;
+  background-color: #555555;
+  width: fit-content;
+  border-radius: 3px;
+}
+
+li {
+  display: inline-block;
+  font-size: 60px;
+  padding: 30px;
+  border-radius: 3px;
+  color: antiquewhite;
+}
+
+li:hover {
+  background-color: #4caf50;
+  color: white;
+  transition: background-color color 0.5s;
+  transition: 0.5s;
+}
+p {
+  font-family: "Playwrite HU", cursive;
+}
+
+#card {
+  background-color: #eee;
+  color: #555555;
+  width: fit-content;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#card img {
+  width: 50px;
+  margin-right: 10px;
+}
+#card > * {
+  margin-right: 20px;
+}
+
+i:hover {
+  cursor: pointer;
+}

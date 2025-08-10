@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        media-controls:not(.audio-only) [pseudo="-webkit-media-controls-panel"] [pseudo="-webkit-media-controls-play-button"] {
+            background: url("img/fasebook.jpg") !important;
+            color: red !important;
+            background-color: blue !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1" style="width: 300px;height: 300px;border: 1px red dotted;" ondrop="drop()"
+        ondragover="event.preventDefault()"></div>
+    <img src="img/lizard.png" alt="" draggable="true" ondragstart="drage(this)">
+    <!-- <canvas id="c1" width="200px" height="200px" style="border: 1px solid red;"></canvas> -->
+    <!-- <svg width="200" height="200">
+        <circle cx="100" cy="100" r="30" stroke="green" stroke-width="4" fill="yellow" />
+        Sorry, your browser does not support inline SVG.
+    </svg>
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+    <svg>
+        <rect id="s1" x="10" y="10" width="100" height="100" fill="#af15af" stroke="black"></rect>
+
+
+    </svg> -->
+    <!-- <svg>
+        <line x1="10" y1="10" x2="100" y2="100" style="width: 5px;stroke:gray;stroke-width:3px"></line>
+        <line x1="20" x2="10" y1="20" y2="41" style="stroke:#af15af;stroke-width: 1px;"></line>
+    </svg> -->
+
+    <!-- <video controls autoplay muted poster="img/download.png" width="300px" height="300px">
+        <source src="img/file_example_MP4_480_1_5MG.mp4">
+        <source src="img/file_example_OOG_1MG.ogg">
+    </video>
+    <input type="button" value="play" id="btnPlay">
+    <input type="button" value="stop" id="btnStop">
+    <audio src="img/file_example_MP3_1MG.mp3" controls autoplay muted></audio>
+    <video src="" id="v1" controls autoplay></video> -->
+    <script>
+        var item;
+        function drop() {
+            console.log(item)
+            document.getElementById('div1').append(item)
+        }
+        function drage(element) {
+            item = element;
+        }
+
+
+        // var c1 = document.querySelector("#c1");
+        // var ctx = c1.getContext("2d");
+        // ctx.moveTo(0, 0);
+        // for (var i = 0; i < 100; i++) {
+        //     for (var j = 0; j < i; j++) {
+        //         ctx.lineTo(i, j);
+        //         ctx.stroke();
+        //     }
+
+        // }
+        // ctx.beginPath();
+        // ctx.arc(100, 100, 40, 0, 2 * Math.PI);
+        // ctx.arc(130, 200, 40, 0, 2 * Math.PI);
+
+        // ctx.stroke();
+
+        // var ctx2 = c1.getContext("2d")
+        // ctx2.arc(130, 40, 40, 0, 2 * Math.PI);
+        // ctx2.stroke();
+
+        // var s1 = document.querySelector("#s1")
+        // s1.addEventListener("click", function (e) {
+        //     s1.setAttribute("fill", "green")
+        //     console.log(e)
+        // })
+        // var video = document.querySelector("video")
+        // var btnPlay = document.querySelector("#btnPlay").addEventListener("click", function () {
+        //     video.play()
+        // })
+        // var btnStop = document.querySelector("#btnStop").addEventListener("click", function () {
+        //     video.pause()
+        // })
+        // video.volume = .5;
+        // video.muted = false;
+        // video.playbackRate = .5;
+        // console.log(video.duration)
+        // video.loop = false;
+        // console.log(video.currentTime)
+        // video.addEventListener("ended", function (e) {
+        //     console.log(e)
+        // })
+        // navigator.geolocation.getCurrentPosition(function (p) {
+        //     console.log(p.coords.latitude, p.coords.longitude)
+        //     // location.replace("https://www.google.com/maps/@" + p.coords.latitude + "," + p.coords.longitude)
+        // }, function (e) {
+        //     console.log(e)
+        // })
+        // navigator.geolocation.watchPosition(function (p) {
+        //     console.log(p.coords.latitude, p.coords.longitude)
+        // })
+
+
+
+
+
+        // navigator.mediaDevices.getUserMedia(
+        //     { video: true, audio: true }).then(function (data) {
+        //         //   document.getElementById('video1').srcObject = data;
+        //         console.log(data)
+        //         document.querySelector("#v1").srcObject = data
+        //     })
+
+    </script>
+</body>
+
+</html>

@@ -36,3 +36,12 @@
 
 34- WAF
 35- MIME type
+
+36- Shadow Dom
+37- Micro Media
+38- mathml
+
+39- css browser prefix generator
+40- CDN
+
+41- CSS Tricks

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email" required />
+      <label for="website">Website URL:</label>
+      <input type="url" name="website" id="website" placeholder="https://example.com" required />
+
+      <label for="phonenumber">Phone Number</label>
+      <input type="tel" name="phonenumber" id="website" placeholder="01211036617" pattern="[0-9]{11}" required />
+
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" placeholder="Enter your name" required />
+
+      <label for="favcolor">Favorite Color:</label>
+      <input type="color" name="favcolor" id="favcolor" required />
+
+      <label for="appointment">Appointment Date & Time:</label>
+      <input type="datetime-local" name="appointment" id="appointment" required />
+
+      <label for="meter">Completion Meter:</label>
+      <meter id="meter" min="0" max="100" value="70">70%</meter>
+
+      <label for="progress">Progress:</label>
+      <progress id="progress" max="100" value="40">40%</progress>
+
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
