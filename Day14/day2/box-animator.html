@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+  <head>
+    <title>Box Animator</title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-color: red;
+      }
+    </style>
+
+    <!--[if gte mso 9
+      ]><xml>
+        <mso:CustomDocumentProperties>
+          <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string"
+            >lec41@mcitegypt.onmicrosoft.com</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor
+          >
+          <mso:Order msdt:dt="string">19700.0000000000</mso:Order>
+          <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string"
+            >lec41@mcitegypt.onmicrosoft.com</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author
+          >
+          <mso:ContentTypeId msdt:dt="string">0x0101</mso:ContentTypeId>
+        </mso:CustomDocumentProperties>
+      </xml><!
+    [endif]-->
+  </head>
+
+  <body>
+    <div class="box"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <script>
+      function optionsAnimateObj(directionWithValues, size, bgColor) {
+        $(".box").css("background-color", bgColor);
+        return {
+          top: directionWithValues.top || 0,
+          left: directionWithValues.left || 0,
+          width: size.width || 0,
+          height: size.height || 0,
+        };
+      }
+
+      var idxPointer = 0;
+
+      var colors = [
+        "red",
+        "yellow",
+        "blue",
+        "green",
+        "purple",
+        "orange",
+        "pink",
+        "brown",
+        "cyan",
+        "magenta",
+        "lime",
+        "teal",
+      ];
+      $(".box").animate(
+        optionsAnimateObj(
+          { top: 0, left: "50%" },
+          {
+            width: 100,
+            height: 100,
+          },
+          colors[idxPointer++ % colors.length]
+        ),
+        2000,
+        function () {
+          $(".box").animate(
+            optionsAnimateObj(
+              { top: "80%", left: "50%" },
+              {
+                width: 100,
+                height: 100,
+              },
+              colors[idxPointer++ % colors.length]
+            ),
+            1000,
+            function () {
+              $(".box").animate(
+                optionsAnimateObj(
+                  { top: "80%", left: "0%" },
+                  {
+                    width: 200,
+                    height: 200,
+                  },
+                  colors[idxPointer++ % colors.length]
+                ),
+                1000,
+                function () {
+                  $(".box").animate(
+                    optionsAnimateObj(
+                      { top: 0, left: "0" },
+                      {
+                        width: 100,
+                        height: 100,
+                      },
+                      colors[0]
+                    ),
+                    1000
+                  );
+                }
+              );
+            }
+          );
+        }
+      );
+    </script>
+  </body>
+</html>

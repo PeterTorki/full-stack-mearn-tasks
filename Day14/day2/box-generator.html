@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+  <head>
+    <title>Box Generator</title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+    </style>
+
+    <!--[if gte mso 9
+      ]><xml>
+        <mso:CustomDocumentProperties>
+          <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string"
+            >lec41@mcitegypt.onmicrosoft.com</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor
+          >
+          <mso:Order msdt:dt="string">19800.0000000000</mso:Order>
+          <mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string"
+            >lec41@mcitegypt.onmicrosoft.com</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author
+          >
+          <mso:ContentTypeId msdt:dt="string">0x0101</mso:ContentTypeId>
+        </mso:CustomDocumentProperties>
+      </xml><!
+    [endif]-->
+  </head>
+
+  <body>
+    <div class="red"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    <script>
+      const colors = [
+        "yellow",
+        "red",
+        "blue",
+        "green",
+        "purple",
+        "orange",
+        "pink",
+        "brown",
+        "cyan",
+        "magenta",
+        "lime",
+        "teal",
+      ];
+      var idxPointer = 0;
+      $("div").hover(
+        function () {
+          $(this).css("background-color", colors[idxPointer]);
+          idxPointer++;
+          if (idxPointer >= colors.length) {
+            idxPointer = 0;
+          }
+        },
+        function () {
+          $(this).css("background-color", colors[idxPointer]);
+          idxPointer--;
+          if (idxPointer <= 0) {
+            idxPointer = 0;
+          }
+        },
+        0
+      );
+
+      $(".red").click(function () {
+        $(this).clone(true).appendTo("body");
+        idxPointer++;
+      });
+    </script>
+  </body>
+</html>
