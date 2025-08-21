@@ -1,0 +1,14 @@
+{
+  "name": "test1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Peter",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^5.9.0"
+  }
+}
