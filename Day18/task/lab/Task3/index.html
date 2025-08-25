@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        color: white;
+
+        text-align: center;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+      }
+      header,
+      footer {
+        background-color: blue;
+        width: 100%;
+        height: 50px;
+      }
+      aside {
+        background-color: orange;
+      }
+      .container-row {
+        display: flex;
+        flex-direction: row;
+        height: 80%;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      .container-row section {
+        background-color: green;
+        flex: 500px;
+      }
+      .container-row aside {
+        width: 250px;
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <section class="container-row">
+      <aside>Left</aside>
+      <section>Main</section>
+      <aside>Right</aside>
+    </section>
+    <footer>Footer</footer>
+  </body>
+</html>

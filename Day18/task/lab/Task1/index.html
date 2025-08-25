@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        flex-direction: column;
+        height: 100vh;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      nav ul li {
+        background-color: lightgray;
+        flex-grow: 1;
+        padding: 10px;
+        text-align: center;
+        width: 300px;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .container div {
+        margin: 2px;
+        border: 1px black solid;
+        flex: 1;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      .container p {
+        padding: 10px;
+      }
+      .container div footer {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a>Home</a></li>
+        <li><a>Services</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="first">
+        <p>This is flex Item</p>
+        <footer>Footer</footer>
+      </div>
+      <div class="second">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam eum porro qui quod dolorum sunt unde
+          voluptatem earum? Est dolorum ipsam sint recusandae autem iste doloribus totam at reiciendis vitae.
+        </p>
+        <footer>Footer</footer>
+      </div>
+    </div>
+  </body>
+</html>
