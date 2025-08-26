@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, 100px);
+        gap: 5px;
+        color: white;
+        transform: rotateY(90deg);
+      }
+      .grid-container div {
+        background-color: black;
+      }
+      .item1 {
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      .item2 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+      .item3 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      .item4 {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 3;
+        grid-column-end: 3;
+      }
+      .item5 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item1">1</div>
+      <div class="item2">2</div>
+      <div class="item3">3</div>
+      <div class="item4">4</div>
+      <div class="item5">5</div>
+    </div>
+  </body>
+</html>
