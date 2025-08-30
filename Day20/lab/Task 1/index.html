@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wireframe</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,54 +14,40 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
       differ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body class="container-fluid p-0">
-    <!-- <button id="toggle" type="button" class="btn btn-primary">Toggle Theme</button> -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center img-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-secondary shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">
+          <img src="./imgs/logo.png" alt="Logo" width="50" class="me-2" />
+          MyWebsite
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3 text-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link fw-semibold active text-primary" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+              <a class="nav-link fw-semibold" href="#">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              <a class="nav-link fw-semibold" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Contact</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+
+          <div class="d-flex align-items-center gap-3">
+            <!-- Theme Toggle -->
+            <button id="toggle" class="btn btn-sm btn-outline-secondary">🌙</button>
+
+            <a href="#" class="btn btn-sm btn-outline-primary">Sign In</a>
+            <a href="#" class="btn btn-sm btn-primary">Register</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -141,46 +126,203 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+      <div class="card-group m-3 gap-3">
+        <div class="card">
+          <img src="./imgs/5.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">this is for image aside</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./imgs/5.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">this is for image aside</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./imgs/5.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">this is for image aside</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="card-group">
-      <div class="card">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to additional content. This content is
-            a little bit longer.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-      <div class="card">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to additional content. This card has
-            even longer content than the first to show that equal height action.
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
+    <div class="container-fluid m-0 p-4 bg-body-secondary">
+      <p class="fs-3 fw-bold text-center">Latest Posts</p>
+      <div class="d-flex justify-content-center">
+        <!-- add latest posts title header cetnered -->
+        <div class="d-flex flex-column flex-md-row gap-4 w-100 w-md-75">
+          <!-- col 1 -->
+          <!-- <div class="d-flex flex-column w-75 gap-2"> make width in mobile w-100 -->
+          <div class="d-flex flex-column w-md-75 gap-2">
+            <div class="card text-light w-100">
+              <img src="./imgs/6.jpg" alt="Background" class="rounded-1" style="height: 40vmin" />
+              <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
+                <small class="text-uppercase text-secondary">Reading</small>
+                <p class="fw-bold mt-2 fs-6">
+                  10 Life-Changing Books Everyone <br />
+                  Should Read
+                </p>
+                <p class="text-light mb-0">James Parker — Mar 05, 2023 • 6 min read</p>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">this is for image aside</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">this is for image aside</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- col 2 -->
+          <div class="d-flex flex-column gap-2 w-100">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">this is for image aside</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">this is for image aside</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">this is for image aside</p>
+                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="container my-5">
+      <div class="p-5 bg-body-secondary rounded-3 text-center shadow-sm">
+        <h3 class="fw-bold">Subscribe to our Newsletter</h3>
+        <p class="mb-4">Get the latest updates, company news, and special offers delivered right to your inbox.</p>
+        <form class="d-flex justify-content-center">
+          <input type="email" class="form-control w-50 me-2" placeholder="Enter your email" />
+          <button class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- i watched: https://youtu.be/1p-Sl4Tdwik (Elzero) to learn -->
+    <div class="footer pt-5 pt-5 text-center text-md-start bg-body-secondary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="info">
+              <p class="mb-5">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui ea possimus fugit aperiam. Veniam minus
+                incidunt tempore maiores porro suscipit, itaque ab eaque, repellendus asperiores cupiditate
+                perspiciatis, vitae beatae blanditiis.
+              </p>
+              <div class="copyright">
+                Created by <span class="text-body-secondary">Peter</span> | &copy; 2025 All Rights Reserved
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2">
+            <div class="links">
+              <h5 class="text-primary">Links</h5>
+              <ul class="list-unstyled lh-lg">
+                <li>Sign In</li>
+                <li>Register</li>
+                <li>About Us</li>
+                <li>Blog</li>
+                <li>Contact Us</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2">
+            <div class="links">
+              <h5 class="text-primary">Links</h5>
+              <ul class="list-unstyled lh-lg">
+                <li>Home</li>
+                <li>Our Services</li>
+                <li>Portfolio</li>
+                <li>Support</li>
+                <li>Terms and conditions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col lg-4">
+            <div class="contact">
+              <h5>Contact Us</h5>
+              <p class="lh-lg mt-3 mb-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod aperiam laboriosam corporis similique
+                perferendis, sequi recusandae odit amet repellat tempore, quidem quo soluta obcaecati totam. Vitae,
+                debitis! Delectus, impedit facere.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

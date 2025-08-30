@@ -1,10 +1,17 @@
-const toggleTheme = document.querySelector("#toggle");
-const html = document.querySelector("html");
+const toggleBtn = document.getElementById("toggle");
+const html = document.documentElement;
 
-toggleTheme.addEventListener("click", () => {
-  html.classList.toggle("dark");
-});
-
-if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  html.classList.toggle("dark");
+// Load theme from localStorage on page load
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  html.setAttribute("data-bs-theme", savedTheme);
+  toggleBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
 }
+
+toggleBtn.addEventListener("click", () => {
+  const currentTheme = html.getAttribute("data-bs-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  html.setAttribute("data-bs-theme", newTheme);
+  toggleBtn.textContent = newTheme === "dark" ? "☀️" : "🌙";
+  localStorage.setItem("theme", newTheme); // Save theme to localStorage
+});
