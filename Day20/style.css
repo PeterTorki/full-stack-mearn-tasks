@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+  width: 100%;
+  background-color: whitesmoke;
+  height: 5000px;
+} */
+/* 
+.bg-danger {
+  background-color: blue !important;
+} */
+
+/* ::selection {
+  background-color: blue;
+} */
+
+/* .text {
+  background-color: blueviolet;
+  width: 300px;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+/* .opc {
+  background-color: rgb(43, 226, 113);
+  width: 300px;
+  opacity: 0;
+  border: 1px solid black;
+}
+.vis {
+  background-color: rgb(226, 98, 43);
+  width: 300px;
+  visibility: hidden;
+  border: 1px solid black;
+}
+.none {
+  background-color: rgb(76, 242, 10);
+  width: 300px;
+  display: none;
+  border: 1px solid black;
+} */
