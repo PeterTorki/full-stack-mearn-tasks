@@ -45,7 +45,9 @@
             <!-- Theme Toggle -->
             <button id="toggle" class="btn btn-sm btn-outline-secondary">🌙</button>
 
-            <a href="#" class="btn btn-sm btn-outline-primary">Sign In</a>
+            <a href="#" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+              >Sign In</a
+            >
             <a href="#" class="btn btn-sm btn-primary">Register</a>
           </div>
         </div>
@@ -168,7 +170,7 @@
         <div class="d-flex flex-column flex-md-row gap-4 w-100 w-md-75">
           <!-- col 1 -->
           <!-- <div class="d-flex flex-column w-75 gap-2"> make width in mobile w-100 -->
-          <div class="d-flex flex-column w-md-75 gap-2">
+          <div class="d-flex flex-column w-md-75 gap-2 col-md-11">
             <div class="card text-light w-100">
               <img src="./imgs/6.jpg" alt="Background" class="rounded-1" style="height: 40vmin" />
               <div class="card-img-overlay d-flex flex-column justify-content-center text-center">
@@ -213,7 +215,7 @@
           <div class="d-flex flex-column gap-2 w-100">
             <div class="card mb-3">
               <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
@@ -227,7 +229,7 @@
             </div>
             <div class="card mb-3">
               <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
@@ -241,7 +243,7 @@
             </div>
             <div class="card mb-3">
               <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-12">
                   <img src="./imgs/5.jpg" class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
@@ -258,6 +260,36 @@
       </div>
     </div>
 
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required />
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container my-5">
       <div class="p-5 bg-body-secondary rounded-3 text-center shadow-sm">
         <h3 class="fw-bold">Subscribe to our Newsletter</h3>
