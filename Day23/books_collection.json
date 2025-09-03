@@ -1,0 +1,131 @@
+[
+    {
+        "_id": 1,
+        "title": "Learning MongoDB",
+        "author": "John Doe",
+        "genre": "Technology",
+        "published_year": 2021,
+        "price": 29.99,
+        "ratings": [
+            5,
+            4,
+            4,
+            5
+        ],
+        "tags": [
+            "database",
+            "nosql",
+            "mongodb"
+        ],
+        "publisher": {
+            "name": "TechBooks",
+            "location": "New York"
+        },
+        "in_stock": true
+    },
+    {
+        "_id": 2,
+        "title": "Mastering JavaScript",
+        "author": "Jane Smith",
+        "genre": "Programming",
+        "published_year": 2020,
+        "price": 39.99,
+        "ratings": [
+            4,
+            4,
+            5,
+            5,
+            5
+        ],
+        "tags": [
+            "javascript",
+            "web",
+            "frontend"
+        ],
+        "publisher": {
+            "name": "CodePress",
+            "location": "London"
+        },
+        "in_stock": true
+    },
+    {
+        "_id": 3,
+        "title": "Data Science with Python",
+        "author": "Alice Johnson",
+        "genre": "Data Science",
+        "published_year": 2022,
+        "price": 49.99,
+        "ratings": [
+            5,
+            5,
+            4,
+            5,
+            5
+        ],
+        "tags": [
+            "python",
+            "data",
+            "machine learning"
+        ],
+        "publisher": {
+            "name": "DataWorld",
+            "location": "San Francisco"
+        },
+        "in_stock": false
+    },
+    {
+        "_id": 4,
+        "title": "NoSQL Databases Explained",
+        "author": "Mark Brown",
+        "genre": "Technology",
+        "published_year": 2019,
+        "price": 25.5,
+        "ratings": [
+            3,
+            4,
+            4,
+            3
+        ],
+        "tags": [
+            "nosql",
+            "database",
+            "cloud"
+        ],
+        "publisher": {
+            "name": "DBHouse",
+            "location": "Berlin"
+        },
+        "in_stock": true
+    },
+    {
+        "_id": 5,
+        "title": "Modern Web Development",
+        "author": "Sara Lee",
+        "genre": "Programming",
+        "published_year": 2023,
+        "price": 59.99,
+        "ratings": [
+            5,
+            5,
+            5,
+            4
+        ],
+        "tags": [
+            "web",
+            "javascript",
+            "nodejs",
+            "react"
+        ],
+        "publisher": {
+            "name": "WebMasters",
+            "location": "Toronto"
+        },
+        "in_stock": true
+    }
+]
+
+
+
+
+
+
