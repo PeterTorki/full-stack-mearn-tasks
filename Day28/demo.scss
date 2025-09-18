@@ -1,0 +1,306 @@
+// preprocessor css -> write before css then compiled to css
+// browser -> does not understand preprocessor css
+// scripting language vs programming language
+// scripting languages -> interprater - line by line - runtime
+// css with more features and special syntax -> simulate programming language
+// functions - loops - variables - similar class - @directives ,etc
+// safe time - reusable code - no repeated code - readability
+// parent -> child1 -> red, child2 -> green , child3 -> blue, child5 -> yellow
+// what is css rule?
+// sass(scss) - less - styles -> sass(scss) closest one to css syntax , More features than others and all nearly similar in syntax
+// bootstrap -> sass(scss)
+// 1-> communtiy
+// 2-> better features
+// 3-> better for customization and overriding
+// (specificity) -> algo calc weight of selector -> which one has a higher priority to be applied
+// (0-0-0-0)
+// (inline - id - class - type)
+// Inline > ID > Class/Attr/Pseudo-class > Element/Pseudo-element
+// If same specificity → the last rule written wins.
+// * - type - class - id - group - descendent - child >  - adjacent + siblings  - general ~ siblings - attr - pseudo class - pseudo elem
+// sass(scss)
+// sass -> old version -> indentaion , doesnt look like css (syntactically awesome style sheet) (like python)
+// .parent
+//     .child
+//         background : red;
+// scss -> sassy css  -> like css syntax (any css code allowed in scss but not the opposite)
+// cascading ?
+// install sass
+// 1-> vs code extension live sass compiler
+// 2-> sass package (npm i sass -g) -> folder -> 2folders -> css , scss -> sass --watch scss:css
+// 3-> desktop app -> koala , compass , prepros -> convert file.min.css
+// .map.css -> sourcemap
+
+// 1-> comments
+// only in scss not compiled to css
+/* work in css */
+/*! work in css and min css */
+
+// 2-> nesting
+.parent {
+  .child {
+    .dd {
+      .hh {
+        background-color: black; // descendant
+      }
+    }
+  }
+}
+// maximum 4 levels -> readability , specificity strong , harder to override (!important)
+// check on specificity -> in css not in scss
+
+// child selector
+// .parent > .child{}
+.parent {
+  > .child {
+    color: red;
+  }
+}
+// adjacent selector
+.parent {
+  + .child {
+    color: red;
+  }
+}
+// general selector
+.parent {
+  ~ .child {
+    color: red;
+  }
+}
+
+// 3-> ambersand (&) -> inherit selector name
+.container {
+  width: 80%;
+  margin: 0 auto;
+  &-fluid {
+    width: 100%;
+    &,
+    .jj {
+      background-color: cornsilk;
+    }
+  }
+  &:hover {
+    background-color: blue;
+  }
+}
+
+// .container-fluid{}
+
+// 4-> variables
+// css variables
+// :root {
+//   --primary: red;
+// }
+$color1: red;
+.gg {
+  $color1: blue;
+  background-color: $color1;
+}
+// partial files _fileName.scss -> not compiled to css for files structure
+// @import
+@import "variables";
+$secondary: green;
+$color1: red;
+.gg {
+  //$color1: blue;
+  background-color: $secondary;
+}
+
+// 5-> @extend -> grouping
+// .gg,
+// .hh {
+//   background-color: aqua;
+//   font-size: 200px;
+// }
+
+// .hh {
+//   padding: 10px;
+// }
+.mm {
+  background-color: aqua;
+  font-size: 200px;
+}
+
+.kk {
+  @extend .mm;
+  background-color: red;
+}
+
+// 6 -> %placeholder
+// placholder ?  -> input , bootstrap
+// blueprint (class) -> copy of style
+// will not be compiled until we @extend it
+%btn-danger {
+  align-items: center;
+  background-color: blue;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+  & span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  &:hover span {
+    background: none;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.bbttnn {
+  background-color: red;
+  @extend %btn-danger;
+}
+
+// 7 -> interpolation -> template literal `${var}` -> #{$var}
+// $var: mohab;
+// .#{$var} {
+//   background-color: red;
+// }
+// 8 -> loops
+// @for -> to  ( < ), through ( <= )
+// @for $i from 1 to 6 {
+//   .child#{$i} {
+//     font-size: 10px * $i;
+//   }
+// }
+// @for $i from 1 through length($listOfColors) {
+//   .child#{$i} {
+//     background-color: nth($listOfColors, $i);
+//   }
+// }
+// for nested list
+// @while
+$i: 1;
+@while $i <= length($listOfColors) {
+  .color-#{$i} {
+    background-color: nth($listOfColors, $i);
+  }
+  $i: $i + 1;
+}
+// @each
+@each $color in $listOfColors {
+  .#{$color}-k {
+    background-color: $color;
+  }
+}
+@each $key, $color in $mapOfColors {
+  .#{$key}-k {
+    background-color: $color;
+  }
+}
+// 9 -> @function -> just to return value -> [string , number , color , list , .....]
+// params , default params , not compiled until we call it
+// @function half($width) {
+//   @return $width / 2;
+// }
+// 11 -> @if   and , or , not , > , < , == , != , <= , >=
+// @function half($width) {
+//   @if $width >= 1000 {
+//     @return $width / 4;
+//   } @else if $width <= 1000 {
+//     @return $width / 2;
+//   }
+// }
+// .hhhhhhh {
+//   width: half(2000px);
+// }
+// 10 -> @mixin -> really function - %placholder - no return - params - default params -> @include
+// reusable block code - not coompiled until we include it
+@mixin button() {
+  background-color: green;
+}
+
+.b {
+  background-color: red;
+  @include button();
+}
+
+@mixin generateBreakPoints($screenName: "", $breakpoint: 0px, $count: 12) {
+  @if $screenName == "" {
+    @for $i from 1 through $count {
+      .col-#{$i} {
+        // width: calc(100% / #{$count} * #{$i});
+        width: (1 / 12 * 100%) * $i;
+      }
+    }
+  } @else if $screenName != "" {
+    @media (min-width: $breakpoint) {
+      @for $i from 1 through $count {
+        .col-#{$screenName}-#{$i} {
+          // width: calc(100% / #{$count} * #{$i});
+          width: 1 / 12 * 100%;
+        }
+      }
+    }
+  }
+}
+
+@include generateBreakPoints();
+@include generateBreakPoints(sm, 500px);
+
+// mediaQuery
+// @media (min-width: 500px) {
+//   body {
+//     background-color: red;
+//   }
+//   h1 {
+//     background-color: green;
+//   }
+// }
+// @media (min-width: 800px) {
+//   body {
+//     background-color: blue;
+//   }
+//   h1 {
+//     background-color: orange;
+//   }
+// }
+// body {
+//   @media (min-width: 500px) {
+//     background-color: black;
+//   }
+//   @media (min-width: 800px) {
+//     background-color: green;
+//   }
+//   @media (min-width: 1000px) {
+//     background-color: blue;
+//   }
+// }
+// h1 {
+//   @media (min-width: 500px) {
+//     background-color: black;
+//   }
+//   @media (min-width: 800px) {
+//     background-color: green;
+//   }
+//   @media (min-width: 1000px) {
+//     background-color: blue;
+//   }
+// }

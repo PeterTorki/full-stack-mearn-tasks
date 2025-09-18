@@ -1,0 +1,17 @@
+$primary: orange;
+$secondary: green;
+
+$devices: (
+  mobile: 480px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1200px,
+);
+
+$columns: 12;
+$sizes: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xlg: 1200px,
+);

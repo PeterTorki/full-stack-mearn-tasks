@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css" />
+    <script
+      src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* .container { */
+      /* width: 50%; */
+      /* height: 50vh; */
+      /* background-color: brown; */
+      /* display: grid; */
+      /* grid-template-columns: 50px 50px 50px 50px; */
+      /* grid-template-columns: 1fr 2fr 1fr 1fr; */
+      /* num , size */
+      /* grid-template-columns: repeat(4, 1fr); */
+      /* grid-template-columns: 1fr repeat(3 , 100px 100px); */
+      /* autp-fill */
+      /* grid-template-columns: repeat(auto-fill, 100px); */
+      /* grid-template-columns: repeat(auto-fill, minmax(100px, 300px)); */
+      /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
+      /* auto-fit */
+      /* grid-template-columns: repeat(auto-fit, minmax(100px, 200px)); */
+      /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+      /* grid-template-rows: 50px 50px 50px; */
+      /* grid-template-rows: repeat(auto-fill, 100px); */
+      /* grid-auto-rows: minmax(100px, auto); */
+      /* grid-template-areas:
+          "header header header header header"
+          "aside2 main main main aside3"
+          "aside2 main main main aside3"
+          "aside2 main main main aside3"
+          "footer footer footer footer footer"; */
+      /* } */
+
+      /* .item {
+        background-color: blueviolet;
+        border: 1px solid white;
+      } */
+
+      /* .item1 { */
+      /* grid-column: 2/5; */
+      /* grid-row: span 3; */
+      /* grid-area: 1 / 1 /3 /3; */
+      /* grid-area: header; */
+      /* } */
+      /* .item2 { */
+      /* grid-column: 1 / 1;
+        grid-row: 1 / 1; */
+      /* grid-column: 1 / 2;
+        grid-row: 1 / 2; */
+      /* grid-area: aside2; */
+      /* } */
+
+      /* .item3 { */
+      /* grid-area: main; */
+      /* } */
+      /* .item4 { */
+      /* grid-column: 1 / 1;
+        grid-row: 1 / 1; */
+      /* grid-column: 1 / 2;
+        grid-row: 1 / 2; */
+      /* grid-area: aside3; */
+      /* } */
+      /* .item5 { */
+      /* grid-area: footer;
+      } */
+
+      /* .media {
+        width: 100%;
+        height: 50vh;
+        background-color: red;
+      } */
+
+      /* screen print speech all*/
+      /* max-width */
+      /* min-width */
+      /* orientation  */
+      /* prefers-color-scheme */
+
+      /* @media (min-width: 900px) {
+        .media {
+          background-color: rgb(87, 0, 128);
+        }
+      } */
+
+      /* @media (min-width: 1000px) and (min-width: 500px) {
+        .media-sm {
+         
+          background-color: green;
+        }
+      } */
+      /* @media (min-width: 1200px) {
+        .media {
+          background-color: rgb(255, 126, 6);
+        }
+      }
+
+      @media (min-width: 1500px) {
+        .media {
+          background-color: rgb(45, 241, 234);
+        }
+      } */
+      /* @media (prefers-color-scheme: dark) {
+        body {
+          background-color: black;
+        }
+      } */
+       
+      /* 
+      .item {
+        background-color: darkblue;
+        color: white;
+      }
+
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+      
+      @media (min-width: 900px) {
+      .col-sm-1 {
+        width: calc((100% / 12) * 1);
+      }
+
+      .col-sm-2 {
+        width: calc((100% / 12) * 2);
+      }
+
+      .col-sm-3 {
+        width: calc((100% / 12) * 3);
+      }
+
+      .col-sm-4 {
+        width: calc((100% / 12) * 4);
+      }
+
+      .col-sm-5 {
+        width: calc((100% / 12) * 5);
+      }
+
+      .col-sm-6 {
+        width: calc((100% / 12) * 6);
+      }
+
+      .col-sm-7 {
+        width: calc((100% / 12) * 7);
+      }
+
+      .col-sm-8 {
+        width: calc((100% / 12) * 8);
+      }
+
+      .col-sm-9 {
+        width: calc((100% / 12) * 9);
+      }
+
+      .col-sm-10 {
+        width: calc((100% / 12) * 10);
+      }
+
+      .col-sm-11 {
+        width: calc((100% / 12) * 11);
+      }
+
+      .col-sm-12 {
+        width: calc((100% / 12) * 12);
+      }
+
+        .col-md-1 {
+          width: calc((100% / 12) * 1);
+        }
+
+        .col-md-2 {
+          width: calc((100% / 12) * 2);
+        }
+
+        .col-md-3 {
+          width: calc((100% / 12) * 3);
+        }
+
+        .col-md-4 {
+          width: calc((100% / 12) * 4);
+        }
+
+        .col-md-5 {
+          width: calc((100% / 12) * 5);
+        }
+
+        .col-md-6 {
+          width: calc((100% / 12) * 6);
+        }
+
+        .col-md-7 {
+          width: calc((100% / 12) * 7);
+        }
+
+        .col-md-8 {
+          width: calc((100% / 12) * 8);
+        }
+
+        .col-md-9 {
+          width: calc((100% / 12) * 9);
+        }
+
+        .col-md-10 {
+          width: calc((100% / 12) * 10);
+        }
+
+        .col-md-11 {
+          width: calc((100% / 12) * 11);
+        }
+
+        .col-md-12 {
+          width: calc((100% / 12) * 12);
+        }
+      }
+      @media (min-width: 1200px) {
+        .col-lg-1 {
+          width: calc((100% / 12) * 1);
+        }
+
+        .col-lg-2 {
+          width: calc((100% / 12) * 2);
+        }
+
+        .col-lg-3 {
+          width: calc((100% / 12) * 3);
+        }
+
+        .col-lg-4 {
+          width: calc((100% / 12) * 4);
+        }
+
+        .col-lg-5 {
+          width: calc((100% / 12) * 5);
+        }
+
+        .col-lg-6 {
+          width: calc((100% / 12) * 6);
+        }
+
+        .col-lg-7 {
+          width: calc((100% / 12) * 7);
+        }
+
+        .col-lg-8 {
+          width: calc((100% / 12) * 8);
+        }
+
+        .col-lg-9 {
+          width: calc((100% / 12) * 9);
+        }
+
+        .col-lg-10 {
+          width: calc((100% / 12) * 10);
+        }
+
+        .col-lg-11 {
+          width: calc((100% / 12) * 11);
+        }
+
+        .col-lg-12 {
+          width: calc((100% / 12) * 12);
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container row">
+      <div class="item item1 col-sm-12 col-sm-6">1</div>
+      <div class="item item2 col-sm-12 col-sm-6">2</div>
+      <div class="item item3 col-sm-12 col-sm-6">3</div>
+      <div class="item item4 col-sm-12 col-sm-6">4</div>
+      <div class="item item5 col-sm-12 col-sm-6">5</div>
+      <div class="item item6 col-sm-12 col-sm-6">6</div>
+      <div class="item item7 col-sm-12 col-sm-6">7</div>
+      <div class="item item8 col-sm-12 col-sm-6">8</div>
+      <div class="item item9 col-sm-12 col-sm-6">9</div>
+      <div class="item item10 col-sm-12 col-sm-6">10</div>
+      <div class="item item11 col-sm-12 col-sm-6">11</div>
+      <div class="item item12 col-sm-12 col-sm-6">12</div>
+    </div> -->
+    <!-- 
+    <div class="media">
+      <h1>MERN</h1>
+    </div> -->
+
+    <!-- <div class="bg-danger">MERN</div> -->
+
+    <!-- Button trigger modal -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch demo modal
+    </button>  -->
+
+    <!-- Modal -->
+    <!-- <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="container">
+      <div class="row bg-info">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+      </div>
+    </div>
+        <div class="container">
+
+    <div class="row bg-danger">
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+      <div class="col">Column</div>
+    </div>
+    </div> -->
+
+  </body>
+</html>

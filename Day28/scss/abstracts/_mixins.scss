@@ -1,0 +1,28 @@
+@import "../abstracts/variables";
+
+@mixin responsive-at($device) {
+  $breakpoint: map-get($devices, $device);
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+$i: 1;
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    width: percentage($i / $columns);
+  }
+}
+
+@mixin grid-system() {
+  @each $key, $value in $sizes { 
+    @media (max-width: $value) {
+      @for $i from 1 through $columns {
+        .col-#{$key}-#{$i} {
+          width: percentage($i / $columns);
+        }
+      }
+    }
+  }
+}

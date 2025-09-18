@@ -1,0 +1,14 @@
+@function buildSizes() {
+  $sizes: ();
+  $initialSize: 18px;
+  @for $i from 1 through 3 {
+    $sizes: append($sizes, $initialSize);
+    $initialSize: $initialSize - 2px;
+  }
+
+  @return $sizes;
+}
+
+@function half($size) {
+  @return $width / 2;
+}

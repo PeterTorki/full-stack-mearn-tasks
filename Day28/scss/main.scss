@@ -1,0 +1,23 @@
+@import "abstracts/variables";
+@import "abstracts/functions";
+
+.main {
+  &-title {
+    color: $primary;
+  }
+  &-subtitle {
+    color: $secondary;
+  }
+}
+
+.content {
+  $sizes: buildSizes();
+  @each $size in $sizes {
+    .font-#{$size} {
+      font-size: $size;
+    }
+  }
+}
+
+@import "components/buttons";
+@import "layout/grid";
