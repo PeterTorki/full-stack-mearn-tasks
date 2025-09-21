@@ -1,0 +1,5 @@
+#1 -> custom module -> umd [unversal module definition] -> module import [client & server]
+#2 -> [publish] -> NPM -> package.josn -> commad line
+------------------------------------------------------------------------------
+#3 -> Express
+#4 -> Middlewares

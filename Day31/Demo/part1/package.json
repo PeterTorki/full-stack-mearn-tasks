@@ -1,0 +1,26 @@
+{
+  "name": "clac-umd-mern",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "calc",
+    "add",
+    "calc-umd-mern"
+  ],
+  "license": "ISC",
+  "author": "isi-mern",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.2"
+  }
+}
