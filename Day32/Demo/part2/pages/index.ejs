@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <%- include("./header.ejs") %>
+
+    <!-- output -->
+    <h1>hello <%= name %></h1>
+
+    <div>
+      <h1><%= obj.name %></h1>
+      <p><%= obj.age %></p>
+    </div>
+
+    <ul>
+      <% for (let i = 0; i < arr.length; i++) { %>
+      <li><span><%= arr[i].name %></span> <span><%= arr[i].age %></span></li>
+      <% } %>
+    </ul>
+    <button onclick="clickMe()">click...!</button>
+
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>
