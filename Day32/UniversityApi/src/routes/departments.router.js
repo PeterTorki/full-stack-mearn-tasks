@@ -4,6 +4,7 @@ const Course = require("../models/course.model");
 const router = express.Router();
 const validator = require("../utils/schemaValidator");
 const departmentValidator = require("../validators/department.validator");
+const Student = require("../models/student.model");
 
 router.post("/", validator(departmentValidator), async (req, res) => {
   try {
@@ -21,8 +22,38 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   const dept = await Department.findById(req.params.id);
+  if (!dept) return res.status(404).json({ error: "Department not found" });
+
   const courses = await Course.find({ department: req.params.id });
-  res.json({ ...dept.toObject(), courses });
+  const students = await Student.find({ department: req.params.id, active: true });
+
+  res.json({ ...dept.toObject(), courses, students });
+});
+
+router.get("/:id/courses", async (req, res) => {
+  const dept = await Department.findById(req.params.id);
+  if (!dept) return res.status(404).json({ error: "Department not found" });
+
+  const courses = await Course.find({ department: req.params.id });
+
+  res.json({
+    id: dept._id,
+    name: dept.name,
+    courses,
+  });
+});
+
+router.get("/:id/students", async (req, res) => {
+  const dept = await Department.findById(req.params.id);
+  if (!dept) return res.status(404).json({ error: "Department not found" });
+
+  const students = await Student.find({ department: req.params.id, active: true });
+
+  res.json({
+    id: dept._id,
+    name: dept.name,
+    students,
+  });
 });
 
 router.put("/:id", async (req, res) => {
