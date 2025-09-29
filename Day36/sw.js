@@ -31,7 +31,7 @@ self.addEventListener("fetch", (event) => {
       .then(async (response) => {
         if (response.status === 404) {
           const cached404 = await caches.match(NOT_FOUND_URL);
-          return cached404 || Response.error();
+          return cached404;
         }
 
         if (event.request.method === "GET") {
