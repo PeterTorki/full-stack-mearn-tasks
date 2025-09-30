@@ -7,20 +7,21 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-let deferredPrompt;
+let promptEvent;
 const installBtn = document.getElementById("installBtn");
 
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
-  deferredPrompt = e;
+  promptEvent = e;
   installBtn.style.display = "block";
 });
+
 installBtn.addEventListener("click", async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
+  if (promptEvent) {
+    promptEvent.prompt();
+    const { outcome } = await promptEvent.userChoice;
     console.log(`User response to the install prompt: ${outcome}`);
-    deferredPrompt = null;
+    promptEvent = null;
     installBtn.style.display = "none";
   }
 });

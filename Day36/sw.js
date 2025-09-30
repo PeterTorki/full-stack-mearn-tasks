@@ -1,7 +1,7 @@
 const cacheKey = "v22";
 const OFFLINE_URL = "/pages/offline.html";
 const NOT_FOUND_URL = "/pages/404.html";
-const urlsToCache = ["/", "/index.html", "/src/style.css", "/src/app.js", OFFLINE_URL, NOT_FOUND_URL];
+const urlsToCache = ["/", "/index.html", "/src/style.css", "/src/page.css", "/src/app.js", OFFLINE_URL, NOT_FOUND_URL];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -48,7 +48,6 @@ self.addEventListener("fetch", (event) => {
         return response;
       })
       .catch(async () => {
-        // If request is in cache → return it
         const cachedResponse = await caches.match(event.request);
         if (cachedResponse) {
           return cachedResponse;
