@@ -1,0 +1,107 @@
+body {
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.form-container,
+.tasks-container {
+  padding: 20px;
+}
+input,
+button {
+  font: inherit;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+.btn {
+  background: #667eea;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: #556cd6;
+}
+.datetime-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.datetime-group input {
+  flex: 1;
+  min-width: 60px;
+  text-align: center;
+}
+.task-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btn-small {
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+.btn-complete {
+  background: #28a745;
+}
+.btn-delete {
+  background: #dc3545;
+}
+.empty-state {
+  text-align: center;
+  color: #777;
+  padding: 30px;
+}
+.task-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.task-completed {
+  color: #28a745;
+  text-decoration: line-through;
+}
+
+.task-overdue {
+  color: #dc3545;
+  text-decoration: line-through;
+}

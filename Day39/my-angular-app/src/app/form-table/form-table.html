@@ -1,0 +1,59 @@
+<div class="container mt-4 gap-4 d-flex flex-column">
+  <div class="container align-self-center align-items-center p-4 bg-light rounded">
+    <h3 class="text-center mb-3">User Form</h3>
+    <div class="row mb-3 justify-content-center g-3">
+      <div class="input-group mb-2 col-5">
+        <div class="input-group-prepend">
+          <div class="input-group-text">N</div>
+        </div>
+        <input
+          #inputName
+          type="text"
+          class="form-control"
+          name="name"
+          id="inlineFormInputGroup"
+          (change)="onChange(inputName)"
+          placeholder="Name"
+        />
+        <!--#inputName: template reference variable -->
+      </div>
+      <div class="input-group mb-2 col-5">
+        <div class="input-group-prepend">
+          <div class="input-group-text">E</div>
+        </div>
+        <input
+          #inputEmail
+          type="text"
+          name="email"
+          class="form-control"
+          id="inlineFormInputGroup"
+          (change)="onChange(inputEmail)"
+          placeholder="Email"
+        />
+      </div>
+    </div>
+    <div class="w-100">
+      <button type="submit" (click)="submit()" class="w-100 btn btn-primary mb-2">Submit</button>
+    </div>
+  </div>
+
+  <div>
+    <table class="table">
+      <caption class="text-center fs-3 caption-top text-decoration-underline">
+        User Data
+      </caption>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ formName || 'None' }}</td>
+          <td>{{ formEmail || 'None' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

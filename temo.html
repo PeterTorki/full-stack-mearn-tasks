@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List with Notifications</title>
+  </head>
+  <body>
+    <script>
+      let db;
+      const DB_NAME = "TodoDB";
+      const STORE_NAME = "tasks";
+
+      // Initialize IndexedDB
+      function initDB() {
+        return new Promise((resolve, reject) => {
+          const request = indexedDB.open(DB_NAME, 1);
+
+          request.onerror = () => reject(request.error);
+          request.onsuccess = () => {
+            db = request.result;
+            resolve(db);
+          };
+
+          request.onupgradeneeded = (e) => {
+            db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+              db.createObjectStore(STORE_NAME, { keyPath: "id", autoIncrement: true });
+            }
+          };
+        });
+      }
+
+      // Request notification permission
+      async function requestNotificationPermission() {
+        const statusEl = document.getElementById("notificationStatus");
+
+        if (!("Notification" in window)) {
+          statusEl.textContent = "❌ Notifications not supported";
+          return false;
+        }
+
+        if (Notification.permission === "granted") {
+          statusEl.textContent = "✅ Notifications enabled";
+          return true;
+        }
+
+        if (Notification.permission !== "denied") {
+          const permission = await Notification.requestPermission();
+          if (permission === "granted") {
+            statusEl.textContent = "✅ Notifications enabled";
+            return true;
+          } else {
+            statusEl.textContent = "⚠️ Notifications disabled";
+            return false;
+          }
+        }
+
+        statusEl.textContent = "⚠️ Notifications blocked";
+        return false;
+      }
+
+      // Send notification
+      function sendNotification(title) {
+        if (Notification.permission === "granted") {
+          new Notification("⏰ Task Overdue!", {
+            body: `"${title}" has passed its deadline`,
+            icon: "📋",
+            tag: title,
+          });
+        }
+      }
+
+      // Add task to IndexedDB
+      function addTask(task) {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction([STORE_NAME], "readwrite");
+          const store = transaction.objectStore(STORE_NAME);
+          const request = store.add(task);
+
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = () => reject(request.error);
+        });
+      }
+
+      // Get all tasks
+      function getAllTasks() {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction([STORE_NAME], "readonly");
+          const store = transaction.objectStore(STORE_NAME);
+          const request = store.getAll();
+
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = () => reject(request.error);
+        });
+      }
+
+      // Update task
+      function updateTask(task) {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction([STORE_NAME], "readwrite");
+          const store = transaction.objectStore(STORE_NAME);
+          const request = store.put(task);
+
+          request.onsuccess = () => resolve();
+          request.onerror = () => reject(request.error);
+        });
+      }
+
+      // Delete task
+      function deleteTask(id) {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction([STORE_NAME], "readwrite");
+          const store = transaction.objectStore(STORE_NAME);
+          const request = store.delete(id);
+
+          request.onsuccess = () => resolve();
+          request.onerror = () => reject(request.error);
+        });
+      }
+
+      // Check if task is overdue
+      function isOverdue(deadline) {
+        return new Date() > new Date(deadline);
+      }
+
+      // Format deadline for display
+      function formatDeadline(deadline) {
+        const date = new Date(deadline);
+        return date.toLocaleString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      }
+
+      // Render tasks
+      async function renderTasks() {
+        const tasks = await getAllTasks();
+        const container = document.getElementById("tasksContainer");
+
+        if (tasks.length === 0) {
+          container.innerHTML = `
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                        </svg>
+                        <p>No tasks yet. Add your first task above!</p>
+                    </div>
+                `;
+          return;
+        }
+
+        container.innerHTML = tasks
+          .map((task) => {
+            const overdue = !task.completed && isOverdue(task.deadline);
+            const statusClass = task.completed ? "completed" : overdue ? "overdue" : "";
+            const statusBadge = task.completed
+              ? '<span class="task-status status-completed">✓ Completed</span>'
+              : overdue
+              ? '<span class="task-status status-overdue">⚠ Overdue</span>'
+              : '<span class="task-status status-pending">⏳ Pending</span>';
+
+            if (overdue && !task.notified) {
+              sendNotification(task.title);
+              task.notified = true;
+              updateTask(task);
+            }
+
+            return `
+                    <div class="task-item ${statusClass}">
+                        <div class="task-header">
+                            <div>
+                                <div class="task-title">${task.title}</div>
+                                <div class="task-deadline">📅 ${formatDeadline(task.deadline)}</div>
+                            </div>
+                            ${statusBadge}
+                        </div>
+                        <div class="task-actions">
+                            ${
+                              !task.completed
+                                ? `<button class="btn-complete" onclick="completeTask(${task.id})">Mark Complete</button>`
+                                : ""
+                            }
+                            <button class="btn-delete" onclick="removeTask(${task.id})">Delete</button>
+                        </div>
+                    </div>
+                `;
+          })
+          .join("");
+      }
+
+      // Complete task
+      async function completeTask(id) {
+        const tasks = await getAllTasks();
+        const task = tasks.find((t) => t.id === id);
+        if (task) {
+          task.completed = true;
+          await updateTask(task);
+          renderTasks();
+        }
+      }
+
+      // Remove task
+      async function removeTask(id) {
+        await deleteTask(id);
+        renderTasks();
+      }
+
+      // Handle form submission
+      document.getElementById("taskForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const title = document.getElementById("taskTitle").value;
+        const minute = parseInt(document.getElementById("minute").value);
+        const hour = parseInt(document.getElementById("hour").value);
+        const day = parseInt(document.getElementById("day").value);
+        const month = parseInt(document.getElementById("month").value) - 1; // JS months are 0-indexed
+        const year = parseInt(document.getElementById("year").value);
+
+        const deadline = new Date(year, month, day, hour, minute);
+
+        if (isNaN(deadline.getTime())) {
+          alert("Please enter a valid date and time");
+          return;
+        }
+
+        const task = {
+          title,
+          deadline: deadline.toISOString(),
+          completed: false,
+          notified: false,
+          createdAt: new Date().toISOString(),
+        };
+
+        await addTask(task);
+        e.target.reset();
+        renderTasks();
+      });
+
+      // Check for overdue tasks periodically
+      setInterval(renderTasks, 60000); // Check every minute
+
+      // Initialize app
+      async function init() {
+        await initDB();
+        await requestNotificationPermission();
+        renderTasks();
+      }
+
+      init();
+    </script>
+  </body>
+</html>

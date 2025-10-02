@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>📋 To-Do List</h1>
+        <div id="notificationStatus">Checking notifications...</div>
+      </div>
+      <div class="form-container">
+        <form id="taskForm">
+          <input type="text" id="taskTitle" placeholder="Task title..." required />
+          <div class="datetime-group">
+            <input type="number" id="taskMinute" placeholder="Minute" />
+            <input type="number" id="taskHour" placeholder="Hour" />
+            <input type="number" id="taskDay" placeholder="Day" />
+            <input type="number" id="taskMonth" placeholder="Month" />
+            <input type="number" id="taskYear" placeholder="Year" />
+          </div>
+          <button type="submit" id="submitBtn" class="btn">Add Task</button>
+        </form>
+      </div>
+      <div class="tasks-container" id="tasksContainer">
+        <div class="empty-state"><p>No tasks yet. Add one above!</p></div>
+      </div>
+    </div>
+    <script src="moment-with-locales.js"></script>
+    <script src="idb.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

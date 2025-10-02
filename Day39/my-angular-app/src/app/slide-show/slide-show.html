@@ -1,0 +1,14 @@
+<div class="container mt-4 gap-4 d-flex flex-column">
+  <div class="container align-self-center align-items-center p-4 bg-light rounded" id="slideshow">
+    <div id="buttons">
+      <img id="slideshow-image" [src]="currentImage" alt="Slideshow Image" />
+      <button (click)="previousImage()">&lt;&lt;</button>
+      <button (click)="nextImage()">&gt;&gt;</button>
+      <button (click)="stopSlideshow()">Stop</button>
+      <button (click)="customizeInterval(2000)">Play</button>
+      <button (click)="customizeInterval(6000)">1x 6sec</button>
+      <button (click)="customizeInterval(3000)">2x 3sec</button>
+      <button (click)="customizeInterval(2000)">3x 2sec</button>
+    </div>
+  </div>
+</div>
