@@ -11,6 +11,7 @@ export class FormTable {
 
   formEmail: string = '';
   formName: string = '';
+  isSubmitted: boolean = false;
 
   onChange(inputElement: HTMLInputElement) {
     console.log(inputElement.value);
@@ -23,6 +24,7 @@ export class FormTable {
   }
 
   submit() {
+    this.isSubmitted = true;
     this.formEmail = this.email;
     this.formName = this.name;
   }

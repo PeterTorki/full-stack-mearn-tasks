@@ -38,18 +38,20 @@
   </div>
 
   <div>
-    <table class="table">
+    <table class="table" [class.d-none]="!isSubmitted">
       <caption class="text-center fs-3 caption-top text-decoration-underline">
         User Data
       </caption>
       <thead class="thead-dark">
         <tr>
+          <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <th scope="row">1</th>
           <td>{{ formName || 'None' }}</td>
           <td>{{ formEmail || 'None' }}</td>
         </tr>
