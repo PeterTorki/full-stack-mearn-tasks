@@ -1,0 +1,7 @@
+1-> what is the Template -> (DOM Tree)  
+2-> how render works (cycle)
+--> logic
+3-> directives ( structure , attribute , component , custom)
+4-> control flow -> update of structure directives 
+--------------------------------------------------
+5-> components interactions

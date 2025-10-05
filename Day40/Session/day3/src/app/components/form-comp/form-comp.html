@@ -1,0 +1,16 @@
+<p>form-comp child1!</p>
+<div class="container">
+  <div>
+    <input type="text" name="username" placeholder="username" [(ngModel)]="name" />
+    <input type="text" name="age" placeholder="age" [(ngModel)]="age" />
+    <button type="submit" (click)="addUser()">Enter Data</button>
+    @if(isChecked === 'initial'){
+    <p>Welcome</p>
+    }@else if (isChecked === 'added') {
+    <p [style]="{ color: 'green' }">date added successfully</p>
+
+    }@else if (isChecked === 'err') {
+    <p [style]="{ color: 'red' }">name and age is required</p>
+    }
+  </div>
+</div>

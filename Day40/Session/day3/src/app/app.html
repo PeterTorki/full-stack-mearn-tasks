@@ -1,0 +1,84 @@
+<!-- html + angular -> js -> DOM in memory -> CD -> HTML  -->
+<!-- 
+<div class="container">
+  <div>
+    <input type="text" name="username" placeholder="username" [(ngModel)]="name" />
+    <input type="text" name="age" placeholder="age" [(ngModel)]="age" />
+    <button type="submit" (click)="addUser()">Enter Data</button> -->
+<!-- <ng-template [ngIf]="isChecked === 'initial'">
+      <p>Welcome</p>
+    </ng-template> -->
+<!-- first way else ngif -->
+<!-- <p *ngIf="isChecked === 'initial'">Welcome</p>
+    <p class="good" *ngIf="isChecked === 'added'">date added successfully</p>
+    <p class="bad" *ngIf="isChecked === 'err'">name and age is required</p> -->
+<!-- using ng-template -->
+<!-- <p *ngIf="isChecked === 'initial'; then wel; else success"></p> -->
+<!-- template ref var -->
+<!-- <ng-template #wel>
+      <p>Welcome</p>
+    </ng-template>
+    <ng-template #success>
+      <p [ngStyle]="{ color: 'green' }">date added successfully</p>
+    </ng-template>
+    <ng-template #error>
+      <p [ngStyle]="{ color: 'green' }">date added successfully</p>
+    </ng-template> -->
+<!-- @if(isChecked === 'initial'){
+    <p>Welcome</p>
+    }@else if (isChecked === 'added') {
+    <p [ngStyle]="{ color: 'green' }">date added successfully</p>
+
+    }@else if (isChecked === 'err') {
+    <p [ngStyle]="{ color: 'red' }">name and age is required</p>
+    }
+  </div>
+</div> -->
+<!-- <table>
+  <tr>
+    <th>id</th>
+    <th>username</th>
+    <th>number</th>
+  </tr> -->
+<!-- index , count , even , odd , first , last -->
+<!-- key  -> identity for each element -->
+<!-- <tr *ngFor="let user of usersArr; index as i; even as e; trackBy: setKey">
+    +
+    <td [ngClass]="user.name === '' ? '' : +user.age < 18 ? 'bad' : 'good'">
+      {{ user.id }} , {{ i }} , {{ e }}
+    </td>
+    <td [class]="e ? 'even' : ''">{{ user.name }}</td>
+    <td>{{ user.age }}</td>
+  </tr> -->
+<!-- $index , $count , $even , $odd , $first , $last -->
+<!-- @for(user of usersArr ; track $index){ -->
+<!-- <tr> -->
+<!-- + -->
+<!-- <td [ngClass]="user.name === '' ? '' : +user.age < 18 ? 'bad' : 'good'">
+      {{ user.id }} , {{ $index }} , {{ $first }}
+    </td>
+    <td [class]="$even ? 'even' : ''">{{ user.name }}</td>
+    <td>{{ user.age }}</td>
+  </tr>
+  }
+</table> -->
+<!-- 
+[  'ali' ,'omar' , 'ebrahim' , 'peter']
+0 -> ali
+1 -> omar
+2 -> ebrahim
+3 -> new (peter)
+-->
+<!-- 
+nav -> [link1 , link2 , link3] -> <li  index>  -> top page
+nav -> [link1 , link2 , link3] -> <li  index>  -> side of page
+-->
+<!-- <div [ngClass]="['asddfdf', 'sdfsdfsdf', 'cffvsdfsdf']"></div>
+<div [class]="['asddfdf', 'sdfsdfsdf', 'cffvsdfsdf']"></div> -->
+<h1>Parent Comp</h1>
+<!-- <input type="text" [value]="name" /> -->
+<app-form-comp (sendDataEvent)="recieveData($event)" />
+<!-- $event data -->
+<app-table-comp [koko]="usersArr" />
+<app-child (sendDataChild)="recieveChild($event)" />
+<!-- e.target.value -->

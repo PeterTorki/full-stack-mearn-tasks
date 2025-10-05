@@ -1,0 +1,18 @@
+<h1>table-comp child2!</h1>
+<table>
+  <tr>
+    <th>id</th>
+    <th>username</th>
+    <th>number</th>
+  </tr>
+
+  @for(user of koko ; track $index){
+  <tr>
+    <td [class]="user.name === '' ? '' : +user.age < 18 ? 'bad' : 'good'">
+      {{ user.id }} , {{ $index }} , {{ $first }}
+    </td>
+    <td [class]="$even ? 'even' : ''">{{ user.name }}</td>
+    <td>{{ user.age }}</td>
+  </tr>
+  }
+</table>

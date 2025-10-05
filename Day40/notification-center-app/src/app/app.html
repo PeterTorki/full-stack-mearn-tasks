@@ -1,0 +1,7 @@
+<div class="container mt-4">
+  <h1 class="text-center">Notification Center</h1>
+
+  <app-notification-center [state]="alertState" [text]="alertText"></app-notification-center>
+  <hr />
+  <app-alert-controls (changeAlert)="updateAlert($event)"></app-alert-controls>
+</div>
