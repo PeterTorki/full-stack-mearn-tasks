@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-type AlertState = 'success' | 'error' | 'warning' | 'info';
+type AlertState = 'success' | 'error' | 'warning' | 'info' | undefined;
 
 @Component({
   selector: 'app-notification-center',
@@ -10,6 +10,6 @@ type AlertState = 'success' | 'error' | 'warning' | 'info';
   styleUrls: ['./notification-center.css'],
 })
 export class NotificationCenter {
-  @Input() state: AlertState = 'info';
-  @Input() text: string = '';
+  @Input() state: AlertState;
+  @Input() text: string | undefined;
 }

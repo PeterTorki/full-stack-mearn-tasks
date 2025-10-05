@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 type Product = {
   id: number | string;
@@ -9,31 +11,21 @@ type Product = {
 
 @Component({
   selector: 'app-product-form',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './product-form.html',
-  styleUrl: './product-form.css',
 })
 export class ProductForm {
-  @Output() formSubmit = new EventEmitter<Product>();
-  @Output() formReset = new EventEmitter<void>();
+  @Output() productAdded = new EventEmitter<Product>();
 
-  id: number | string = '';
-  name: string = '';
-  price: number = 0;
-  category: string = '';
+  name = '';
+  price!: number;
+  category = '';
 
-  submitForm() {
-    if (this.id && this.name && this.price > 0 && this.category) {
-      const product: Product = {
-        id: this.id,
-        name: this.name,
-        price: this.price,
-        category: this.category,
-      };
-      this.formSubmit.emit(product);
-      this.formReset.emit();
-    } else {
-      alert('Please fill in all fields correctly.');
-    }
+  addProduct() {
+    if (!this.name.trim() || !this.price || !this.category.trim()) return;
+    this.productAdded.emit({ id: 0, name: this.name, price: this.price, category: this.category });
+    this.name = '';
+    this.price = 0;
+    this.category = '';
   }
 }

@@ -1,3 +1,22 @@
 <div class="container mt-4">
-  <app-product-form (formSubmit)="onFormSubmit($event)"></app-product-form>
+  <h1 class="mb-3">Product Dashboard</h1>
+  <p *ngIf="favoriteProducts.length" class="alert alert-info">
+    Favorite Products: {{ favoriteProducts.join(', ') }}
+  </p>
+
+  <app-product-form (productAdded)="addProduct($event)"></app-product-form>
+
+  <app-product-list
+    [products]="products"
+    (deleteProduct)="deleteProduct($event)"
+    (handleFavorites)="toggleFavorites($event)"
+    (editProduct)="startEdit($event)"
+  ></app-product-list>
+
+  <app-product-edit
+    *ngIf="productToEdit"
+    [product]="productToEdit"
+    (productUpdated)="updateProduct($event)"
+    (cancel)="cancelEdit()"
+  ></app-product-edit>
 </div>

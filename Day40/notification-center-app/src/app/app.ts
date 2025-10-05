@@ -8,8 +8,8 @@ import { AlertControls } from './alert-controls/alert-controls';
   styleUrl: './app.css',
 })
 export class App {
-  alertState = 'success';
-  alertText = 'Profile updated successfully!';
+  alertState: string = 'success';
+  alertText: string = 'Profile updated successfully!';
 
   updateAlert(event: { state: string; text: string }) {
     this.alertState = event.state;

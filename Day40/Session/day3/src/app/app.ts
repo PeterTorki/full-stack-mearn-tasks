@@ -1,16 +1,16 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { TableComp } from './components/table-comp/table-comp';
-import { user } from './types';
-import { FormComp } from './components/form-comp/form-comp';
-import { Child } from './components/child/child';
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { Component } from "@angular/core";
+import { TableComp } from "./components/table-comp/table-comp";
+import { user } from "./types";
+import { FormComp } from "./components/form-comp/form-comp";
+import { Child } from "./components/child/child";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   imports: [FormsModule, CommonModule, TableComp, FormComp, Child],
-  templateUrl: './app.html',
-  styleUrl: './app.css',
+  templateUrl: "./app.html",
+  styleUrl: "./app.css",
 })
 export class App {
   // id: number | string = '';
