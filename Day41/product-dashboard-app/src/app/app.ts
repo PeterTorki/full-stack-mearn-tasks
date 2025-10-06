@@ -16,23 +16,13 @@ type Product = {
   templateUrl: './app.html',
 })
 export class App {
-  products: Product[] = [];
+  product!: Product;
 
   favoriteProducts: string[] = [];
   productToEdit?: Product;
 
   addProduct(product: Product) {
-    this.products.push({ ...product, id: Date.now() });
-  }
-
-  deleteProduct(event: { id: number | string; name: string }) {
-    console.log('delete in app', event);
-    this.products = this.products.filter((p) => p.id !== event.id);
-    console.log(this.favoriteProducts);
-    if (this.favoriteProducts.includes(event.name)) {
-      console.log('remove from favorites');
-      this.favoriteProducts = this.favoriteProducts.filter((n) => n !== event.name);
-    }
+    this.product = product;
   }
 
   toggleFavorites(name: string) {
@@ -45,11 +35,6 @@ export class App {
 
   startEdit(product: Product) {
     this.productToEdit = { ...product };
-  }
-
-  updateProduct(updatedProduct: Product) {
-    this.products = this.products.map((p) => (p.id === updatedProduct.id ? updatedProduct : p));
-    this.productToEdit = undefined;
   }
 
   cancelEdit() {
