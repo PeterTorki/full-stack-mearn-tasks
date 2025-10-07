@@ -1,0 +1,29 @@
+Agenda Day5:
+
+- Routing in angular 
+	* Routing Concept	
+	* SPA vs MPA
+	* Make routing
+		- create Components
+		- External Module ==> [RouterModule]
+		- Routing Configuration ==> [{path:'', component}]
+		- Custom tag
+		
+		- Nested Routing 
+		- Lazy Loading   ===> [Avoid Useless Requests] ==> loadComponent
+Routing ==> Guards ==>self-study
+- Directives in angular
+	* custom directive
+- Signals
+
+
+
+
+
+
+
+
+
+
+
+

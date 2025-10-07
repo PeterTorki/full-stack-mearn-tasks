@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <h1 class="mb-3">Product Dashboard</h1>
+  <p *ngIf="favoriteProducts.length" class="alert alert-info">
+    Favorite Products: {{ favoriteProducts.join(', ') }}
+  </p>
+
+  <app-product-form (productAdded)="addProduct($event)"></app-product-form>
+
+  <app-products-list
+    [product]="product"
+    (handleFavorites)="toggleFavorites($event)"
+    (editProduct)="startEdit($event)"
+  ></app-products-list>
+
+  <app-product-edit
+    *ngIf="productToEdit"
+    [product]="productToEdit"
+    (cancel)="cancelEdit()"
+  ></app-product-edit>
+</div>

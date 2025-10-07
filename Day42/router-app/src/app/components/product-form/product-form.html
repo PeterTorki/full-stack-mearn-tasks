@@ -1,0 +1,21 @@
+<!-- form-product.component.html -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Add Product</h5>
+    <form (ngSubmit)="addProduct()" #form="ngForm">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input [(ngModel)]="name" name="name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input type="number" [(ngModel)]="price" name="price" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input [(ngModel)]="category" name="category" class="form-control" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>
