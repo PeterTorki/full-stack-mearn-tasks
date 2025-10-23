@@ -1,0 +1,23 @@
+last Session:
+	- Key
+
+Day2:
+
+1- Children Props
+2- Component Life Cycle Methods
+3- Events
+4- Call API
+     - Fetch
+     - Axios
+5- Dealing With Images
+    you can put images inside:
+	- Public Folder
+		❌ Images are not included in the build process (no optimizations).
+		❌ You must manually ensure files exist—no Webpack/Vite validation.
+	- src Folder
+		✅ Webpack/Vite optimizes and hashes images (better Compression + Caching).
+		✅ Ensures images exist at compile time Webpack/Vite validation
+	
+
+
+

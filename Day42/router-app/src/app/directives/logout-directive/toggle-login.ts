@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 @Directive({
   selector: '[appLogout]',
-  standalone: true, // ✅ Make it standalone
+  standalone: true,
 })
 export class LogoutDirective {
   constructor(private router: Router) {}

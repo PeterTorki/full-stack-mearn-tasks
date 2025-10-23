@@ -1,0 +1,6 @@
+Agenda Day3
+
+1. Props Changes & Send data from child to parent
+2. Form
+3. Components Interaction
+4. Styling

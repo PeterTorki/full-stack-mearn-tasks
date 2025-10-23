@@ -12,7 +12,6 @@ type Product = {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [CommonModule, ProductForm, ProductList, ProductEdit],
   templateUrl: './app.html',
 })

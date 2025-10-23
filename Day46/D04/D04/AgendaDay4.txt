@@ -1,0 +1,16 @@
+Agenda Day4
+
+1. bootstrap Comp [user]
+2. Intro About Hooks and history
+3. useState hook
+	- disabled logic
+4. useEffect
+	- intro
+	- All Cases
+5. useCallback 
+6. useMemo 
+7. useRef
+8. Custom Hook
+
+
+	
